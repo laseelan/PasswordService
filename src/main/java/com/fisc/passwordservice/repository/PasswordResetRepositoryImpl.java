@@ -5,7 +5,6 @@ import javax.persistence.PersistenceContext;
 
 import org.hibernate.SQLQuery;
 import org.hibernate.Session;
-import org.hibernate.service.spi.ServiceException;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -18,7 +17,7 @@ class PasswordResetRepositoryImpl implements PasswordResetRepository {
 	}
 
 	@Override
-	public void resetPassword(String userId, String password) throws ServiceException {
+	public void resetPassword(String userId, String password) {
 
 		Session session = entityManager.unwrap(Session.class);
 		SQLQuery query = session

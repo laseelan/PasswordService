@@ -13,11 +13,11 @@ public class AccountServiceClientFallback implements AccountServiceClient {
 
 	public User account(Long id) {
 		log.error("Account service is not available");
-		return null;
+		return new User();
 	}
 
 	public User accountByUserId(String userId) {
 		log.error("Account service is not available");
-		return null;
+		return new User();
 	}
 }
