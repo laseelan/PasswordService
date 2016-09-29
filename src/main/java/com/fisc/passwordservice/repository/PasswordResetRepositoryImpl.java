@@ -21,7 +21,7 @@ class PasswordResetRepositoryImpl implements PasswordResetRepository {
 
 		Session session = entityManager.unwrap(Session.class);
 		SQLQuery query = session
-				.createSQLQuery("update TBL_USER_PROFILE set password= :password where USER_ID =:userId");
+				.createSQLQuery("update tbl_user_profile set password= :password where user_id =:userId");
 		query.setParameter("password", password);
 		query.setParameter("userId", userId);
 		query.executeUpdate();

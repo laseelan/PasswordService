@@ -18,8 +18,8 @@ apply plugin: 'spring-boot'
 apply plugin: 'docker'
 
 jar {
-	baseName = 'password-service.arm'
-	version = 'v1.0'
+	baseName = 'password-service'
+	//version = 'v1.1'
 }
 
 bootRepackage {
@@ -34,7 +34,7 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 dependencies {
- 	compile('org.springframework.cloud:spring-cloud-starter-feign')
+        compile('org.springframework.cloud:spring-cloud-starter-feign')
 	compile('org.springframework.cloud:spring-cloud-starter-hystrix')
 	compile('org.springframework.cloud:spring-cloud-starter-hystrix-dashboard')
 	compile('org.springframework.cloud:spring-cloud-starter-turbine')
@@ -51,7 +51,7 @@ group = 'laseelan'
 task buildDocker(type: Docker, dependsOn: build) {
   push = true
   applicationName = jar.baseName
-  tagVersion = 'v1.0'
+  tagVersion = 'v1.2.2'
   dockerfile = file('Dockerfile')
   doFirst {
     copy {

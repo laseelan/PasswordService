@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.fisc.accountservice.model.User;
 
 //@FeignClient(name = "reddit-service", url = "${com.deswaef.reddit.url}")
-@FeignClient(name = "account-service", url = "http://localhost:8082", fallback = AccountServiceClientFallback.class)
+@FeignClient(name = "account-service", url = "http://account-service:80", fallback = AccountServiceClientFallback.class)
 public interface AccountServiceClient {
 
 	@RequestMapping(path = "/account/{id}", method = RequestMethod.GET)
